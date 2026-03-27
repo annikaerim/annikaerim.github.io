@@ -1,72 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        nav {
-            background: #555;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            padding: 20px;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        color: #333;
+    }
+
+    /* NAVBAR */
+    nav {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 20px;
+        z-index: 10;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    nav a:hover {
+        opacity: 0.7;
+    }
+
+    /* HERO */
+    .hero {
+        height: 90vh;
+        background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        position: relative;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.3);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+
+    /* SECTIONS */
+    .section {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    /* IMAGE BLOCKS */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 0 20px 60px;
+    }
+
+    .card {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .card:hover img {
+        transform: scale(1.1);
+    }
+
+    .card-text {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    footer {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Welcome to My Website</h1>
-    <p>A simple HTML example</p>
-</header>
-
+<!-- NAV -->
 <nav>
-    <a href="#">Home</a>
+    <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
     <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
 </nav>
 
-<div class="container">
-    <h2 id="about">About</h2>
-    <p>This is a basic website built with HTML and CSS.</p>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Your Name</h1>
+        <p>Creating cool things & sharing my work</p>
+    </div>
+</section>
 
-    <h2 id="contact">Contact</h2>
-    <p>Email: example@email.com</p>
+<!-- INTRO -->
+<section class="section">
+    <h2>Welcome</h2>
+    <p>This is my personal site where I showcase projects, ideas, and things I’ve built.</p>
+</section>
+
+<!-- FEATURED SECTIONS -->
+<div class="grid">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+        <div class="card-text">Projects</div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+        <div class="card-text">Creative Work</div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+        <div class="card-text">Experiments</div>
+    </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 My Website</p>
+    <p>&copy; 2026 Your Name</p>
 </footer>
 
 </body>
